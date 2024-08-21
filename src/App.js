@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Questao01A from './questoes/Questao01';
+import Questao02 from './questoes/Questao02';
+import Questao03 from './questoes/Questao03';
+import Questao04 from './questoes/Questao04';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>Questão 01</h2>
+      <Questao01A />
+      <h2>Questão 02</h2>
+      <Questao02 />
+      <h2>Questão 03</h2>
+      <Questao03 />
+      <h2>Questão 04</h2>
+      <Questao04 />
     </div>
   );
 }

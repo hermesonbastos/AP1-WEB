@@ -1,0 +1,35 @@
+O principal benefício de utilizar o Context é
+resolver o problema de prop drilling, que é a transmissão
+de propriedades entre muitos componentes filhos, o que
+deixa o código muito verboso e nada manutenível
+
+componentepai = () => {
+  prop
+  componenteFilho(prop)
+}
+
+componentefilho = (prop) => {
+  componenteNeto(prop)
+}
+
+componenteNeto = (prop) = {
+  console.log(prop)
+}
+
+No exemplo acima o componente neto precisa renderizar a propriedade,
+para isso eu precisei utilizar 3 componentes, jogando essa propriedade como uma "batata quente", até chegar no que queremos,
+com o Context eu posso simplesmente adicionar o que eu quero ao
+Provider e utilizar o useContext no componente que eu quiser, independente
+do grau de parentesco daquele componente
+
+MyContext = createContext("")
+
+<MyContext.Provider value={prop}>
+  componenteNeto
+</MyContext.Provider>
+
+agora no componente neto posso apenas utilizar esse contexto, sem a a
+necessidade de ter recebido ele de outro componente
+
+dados = useContext(MyContext)
+console.log(dados.prop)
